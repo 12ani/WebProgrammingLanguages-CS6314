@@ -1,0 +1,96 @@
+<!-- Shivani Mankotia sxm180018 | Practice Work 2 -->
+<!doctype html>
+<html lang="en">
+<head>
+  <script type="text/javascript">
+  function checkform(){
+    var alert_msg = true;
+    var ele = document.getElementsByTagName("input");
+    for(var i = 0; i<ele.length; i++)
+    {
+      if (ele[i].value == "")
+      {
+        ele[i].style.borderColor = "red";
+        alert_msg = false;
+      }
+    }
+
+    if(document.querySelector("#gridCheck").checked == false){
+       alert_msg = false;
+     }
+
+    if (document.querySelector("#Password1").value != document.querySelector("#Password2").value){
+      alert("Error: Password must be same!");
+      alert_msg = false;
+    }
+
+    if (alert_msg == true)
+    {
+      alert("success!");
+      return true;
+    }
+    else{
+      alert("Validation Error!");
+      return false;
+    }
+
+  }
+</script>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<title>Form Validation</title>
+<body>
+  <div class="container w-25 p-3 border" >
+    <h1>Sign Up</h1>
+    <p>Please fill this form to create an account!</p>
+    <hr>
+    <form onsubmit="checkform();">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label></label>
+          <input type="text" class="form-control" id="Name1" name="Name1"placeholder="First Name">
+        </div>
+        <div class="form-group col-md-6">
+          <label></label>
+          <input type="text" class="form-control" id="Name2" name="Name2" placeholder="Last Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail4"></label>
+        <input type="email" class="form-control" id="Email1" name="Email1" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <div class="form-group ">
+          <label></label>
+          <input type="password" class="form-control" id="Password1" name="Password1" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label></label>
+          <input type="password" class="form-control" id="Password2" name="Password2" placeholder="Confirm Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" name="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            I accept the Terms of Use & Privacy Policy
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
