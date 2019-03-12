@@ -1,0 +1,51 @@
+
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+
+			$("button").click(function(){
+					$.ajax({
+					type: "POST",
+					url: "babynames.php",
+					dataType: 'html',
+					data: {yearsb: $('#yearsb').val() ,gendersb :$('#gendersb').val()},
+					success: function(result){
+						$("#div1").html(result);
+					}
+					});
+			});
+	});
+
+	</script>
+	<style>
+	table, th, td {
+		border: 1px solid black;
+	}
+	</style>
+</head>
+<body>
+
+
+		<select name="yearsb" id="yearsb">
+			<option value="All Years">All Years</option>
+			<option value="2011">2011</option>
+			<option value="2012">2012</option>
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+		</select>
+
+
+		<select name="gendersb" id="gendersb">
+			<option value="Both">Both</option>
+			<option value="m">Male</option>
+			<option value="f">Female</option>
+		</select>
+
+		<button>SEARCH</button>
+		<div id="div1"></div>
+
+</body>
+</html>
